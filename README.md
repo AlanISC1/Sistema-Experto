@@ -4,6 +4,7 @@ Tarea realizada en ReactJs.
 Para iniciar el sistema dirigirse a la carpeta del proyecto y ejecutar el siguiente comando:
 
 ```
+    npm install
     npm start
     
 ```

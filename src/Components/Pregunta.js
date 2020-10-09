@@ -5,7 +5,7 @@ import '../Styles/Pregunta.css'
 import 'materialize-css/dist/css/materialize.min.css'
 
 function Pregunta(props){
-    if(props.questNumber>=12){
+    if(props.questNumber>=7){
         return null;
     }
     const pregunta = preguntas.preguntas[props.questNumber];

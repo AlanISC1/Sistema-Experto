@@ -64,24 +64,34 @@ function Start(){
         if(!selected){
             return
         }
-        if(questNumber<12){
+        if(questNumber<7){
             setQuestNumber(questNumber+1);
             let porc = 0;
-            porc= ((questNumber+1)*100)/12;
+            porc= ((questNumber+1)*100)/7;
             setPorcentaje(porc);
             setSelected(false);
-            let filtTrad = await filterObjectArray({array: metodos.tradicionales, objFilter:filtrarState});
-            let filtAg = await filterObjectArray({array: metodos.agiles, objFilter: filtrarState});
+            const filtradoRand ={};
+            for(const [key, value] of Object.entries(filtrarState)){
+                if(Math.random() >= 0.8){
+                    filtradoRand[key] = value;
+                }
+            }
+            const filtTrad = await filterObjectArray({array: metodos.tradicionales, objFilter:filtradoRand});
+            const filtAg = await filterObjectArray({array: metodos.agiles, objFilter: filtradoRand});
             setTradicionales(filtTrad);
             setAgiles(filtAg);
         }
+    }
+
+    const filtrar = async()=>{
+        
     }
 
     const prevQuest = async() =>{
         if(questNumber>0){
             setQuestNumber(questNumber-1);
             let porc = 0;
-            porc= ((questNumber-1)*100)/12;
+            porc= ((questNumber-1)*100)/7;
             setPorcentaje(porc);
             setSelected(false);
             const filt = filtrarState;
@@ -115,7 +125,7 @@ function Start(){
                 <div>
                     <Pregunta setSel={setSel} questNumber={questNumber}/>
                 </div>
-                {questNumber<12 &&
+                {questNumber<7 &&
                 <div>
                     <div className="barra">
                         <div className="progress">
@@ -151,7 +161,7 @@ function Start(){
                 </div>
                 }
                 {
-                    questNumber>=12 &&
+                    questNumber>=7 &&
                     <div>
                        <Resultado tradicionales={tradicionales} agiles={agiles} /> 
                     </div>

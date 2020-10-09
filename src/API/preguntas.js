@@ -21,24 +21,8 @@ export default{
             opciones:['nulo','bajo','mediano','grande']
         },
         {
-            pregunta:'¿Qué planeación te gustaría llevar?',
-            opciones:['nula','baja','mediana','grande']
-        },
-        {
-            pregunta:'¿Cuantas pruebas planea implentar?',
-            opciones:['ninguna', 'pocas', 'algunas','muchas']
-        },
-        {
-            pregunta:'¿Qué importancia tiene la calidad final del proyecto?',
-            opciones:['nula','baja','mediana', 'grande']
-        },
-        {
             pregunta:'¿Como será la interacción con el cliente?',
             opciones:['nula','baja','mediana','grande']
-        },
-        {
-            pregunta:'¿Qué tanto mantenimiento tendrá?',
-            opciones:['nulo','bajo','mediano','grande']
         },
         {
             pregunta:'¿Qué tanta documentación planea tener?',
